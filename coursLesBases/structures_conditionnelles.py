@@ -6,4 +6,4 @@
 # elif age < 18 :
 #     print("vous êtes mineur")
 
-len([1,2,3])
+
