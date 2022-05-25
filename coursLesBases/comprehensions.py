@@ -3,6 +3,6 @@ for i in liste :
     if i > 0 : print(i)
         
     else :
-        print ("not")
+        continue
 
 
