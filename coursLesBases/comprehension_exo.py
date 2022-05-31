@@ -33,3 +33,14 @@
 # print(nombres_doubles)
 
 # exo 4
+#doubler les nombres pairs, passer les impairs en négatif
+nombres = range (10)
+# nombres_inverses = []
+# for i in nombres:
+#     if i % 2 == 0:
+#         nombres_inverses.append(i)
+#     else : 
+#         nombres_inverses.append(-i)
+
+nombres_inverses = [i if i % 2 == 0 else -i for i in nombres]
+print (nombres_inverses)
