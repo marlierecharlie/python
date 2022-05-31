@@ -1,3 +1,4 @@
+# exo 1 :
 #liste qui réccupère que les nombres pairs (== %2)
 # nombres = [1, 21, 5, 44, 4, 9, 5, 83, 29, 31, 25, 38]
 # nombres_pairs = []
@@ -5,12 +6,10 @@
 #     if i % 2 == 0 :
 #         nombres_pairs.append(i)
         
-
-
 # nombres_pairs = [i for i in nombres if i % 2 == 0]
-
 # print (nombres_pairs)
 
+# exo2
 #réccupérer uniquement les nombres positifs
 # nombres = range (-10, 10)
 # print (nombres)
@@ -22,3 +21,15 @@
 
 # nombres_positifs = [i for i in nombres if i >= 0 ]
 # print (nombres_positifs)
+
+# exo3
+#multiplier chaques nombres de la liste par 2
+# nombres = range (5)
+# nombres_doubles = []
+# for i in nombres :
+#     nombres_doubles.append(i*2)
+
+# nombres_doubles = [ i*2 for i in nombres]
+# print(nombres_doubles)
+
+# exo 4
