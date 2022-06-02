@@ -1,9 +1,6 @@
-from curses.ascii import isdigit
-
-
 a = b = ""
 
-While not (a.isdigit() and b.isdigit()) :
+while not (a.isdigit() and b.isdigit()) :
     a = (input("Entrez le premier nombres : "))
     b = (input("Entrez les deuxième nombre : "))
     if not (a.isdigit() and b.isdigit()) :
