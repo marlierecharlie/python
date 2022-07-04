@@ -1,4 +1,5 @@
 import sys
+from tkinter import Menu
 
 LISTE=[]
 
@@ -13,7 +14,18 @@ votre choix: """
 
 Choix_du_menu = ["1", "2", "3", "4", "5"]
 
- 
+ while True:
+     Choix_du_menu = ""
+     while Choix_du_menu not in Menu:
+         Choix_du_menu = input(Menu)
+         if Choix_du_menu not in Menu:
+             print("Veuillez choisir une option valide: ")
+
+    if Choix_du_menu == "1": 
+        item = input("Entrez le nom de l'élèment à ajouter à la liste de courses : ")
+        LISTE.append(item)
+        print(f"L'élèment {item} a bien été ajouté à la liste.")
+    
 
 
 
