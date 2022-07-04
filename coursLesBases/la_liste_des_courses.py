@@ -39,8 +39,10 @@ while True:
     elif Choix_du_menu == "3":
         #il faut faire une boucle à chaque fois pour vérifier qu'il y ait des élèments dans la liste ou non
         if LISTE :
+            #ici on utilise les booléens, si Liste = true, cela signifie qu'il y a au moins un élèment dans la liste
             print("Voici le contenu de votre liste : ")
             for i, item in enumerate(LISTE, 1):
+                #enumerate permet d'obtenir à la fois l'indice et l'élèments sur lequel on boucle 
                 print(f"{i}. {item}")
         
         else :
@@ -49,10 +51,11 @@ while True:
        
         
     elif Choix_du_menu == "4":
-        if LISTE == None:
-            print("Votre liste était vide")
-        else :
-            clear(LISTE)
-            print("Le contenu de la liste a bien été effacé.")
+        clear(LISTE)
+        print("Le contenu de la liste a bien été effacé.")
     
-    else Choix_du_menu == "5":
+    elif Choix_du_menu == "5":
+        print("A bientôt!")
+        sys.exit
+
+    print("-" * 50)
