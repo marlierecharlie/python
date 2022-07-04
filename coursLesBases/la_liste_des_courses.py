@@ -1,5 +1,6 @@
 import sys
 from tkinter import Menu
+from turtle import clear
 
 LISTE=[]
 
@@ -25,6 +26,21 @@ Choix_du_menu = ["1", "2", "3", "4", "5"]
         item = input("Entrez le nom de l'élèment à ajouter à la liste de courses : ")
         LISTE.append(item)
         print(f"L'élèment {item} a bien été ajouté à la liste.")
+        
+    elif Choix_du_menu == "2":
+        item = input ("Entrez le nom de l'élèment à retirer de la liste : ")
+        LISTE.remove(item)
+        print(f"L'élèment {item} a bien été retiré de la liste.")
+        
+    elif Choix_du_menu == "3":
+        print(LISTE)
+        
+    elif Choix_du_menu == "4":
+        clear(LISTE)
+        print("Le contenu de la liste a bien été effacé.")
+    
+    else Choix_du_menu == "5":
+        
     
 
 
