@@ -17,10 +17,9 @@ Choix_du_menu = ["1", "2", "3", "4", "5"]
 
 while True:
     Choix_du_menu = ""
-    while Choix_du_menu not in Menu :
-        Choix_du_menu = input(Menu)
-        
-        if Choix_du_menu not in Menu :
+    while Choix_du_menu not in MENU:
+        Choix_du_menu = input(MENU)
+        if Choix_du_menu not in MENU :
            print("Veuillez choisir une option valide: ")
              
     if Choix_du_menu == "1": 
@@ -52,13 +51,14 @@ while True:
        
         
     elif Choix_du_menu == "4":
-        clear(LISTE)
+        LISTE.clear()
         print("Le contenu de la liste a bien été effacé.")
     
     elif Choix_du_menu == "5":
         print("A bientôt!")
         sys.exit
 
-    print("-" * 50)
+# sert à séparer les différentes itérations de la boucle 
+    print("-" * 10)
     
     
