@@ -1,6 +1,10 @@
+import random
 # trouver un nombre aléatoire entre 0 et 100
 
 # titre 
+
+
+
 print("*** Le jeu du nombre mystère***")
 
 # il te reste 5 essais
@@ -16,3 +20,12 @@ print("*** Le jeu du nombre mystère***")
 # Bravo! Le nombre mystère était bien {nombre_mystere}!
 # Tu as trouvé le nombre en {nombre essai}
 # Fin du jeu. 
+
+# def variable nombre_mystere
+Liste = [ _ for _ in range (1, 101)]
+# print(Liste)
+
+def selectRandom(Liste):
+    return random.choice(Liste)
+
+print(selectRandom(Liste))
