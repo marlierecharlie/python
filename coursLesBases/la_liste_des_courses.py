@@ -48,8 +48,12 @@ while True:
             
         
     elif user_choice == "4":
-        LISTE.clear()
-        print("Le contenu de la liste a bien été effacé.")
+        if LISTE :
+            LISTE.clear()
+            print("Le contenu de la liste a bien été effacé.")
+        else :
+            print("La liste était déjà vide.")
+        
     
     elif user_choice == "5":
         print("A bientôt!")
