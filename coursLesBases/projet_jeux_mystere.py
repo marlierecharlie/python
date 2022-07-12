@@ -15,6 +15,7 @@ print("*** Le jeu du nombre mystère***")
 print(number_to_find)
 
 while remaining_attempts > 0 :
+    remaining_attempts = i+1
     if user_choice != number_to_find :
         user_choice = input("""
         Devine le nombre
