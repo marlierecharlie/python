@@ -2,13 +2,11 @@ import random
 # trouver un nombre aléatoire entre 0 et 100
 
 number_to_find = random.randint(0,100)
-remaining_attempts = 5
+remaining_attempts = 10
 user_choice = ""
 
 # titre 
 print("*** Le jeu du nombre mystère***")
-
-print(number_to_find)
 
 while remaining_attempts > 0 :
     #oppérateur ternaire pour ajouter s à essai si pluriel
@@ -29,10 +27,9 @@ while remaining_attempts > 0 :
     elif user_choice < number_to_find :
         print(f"le nombre mystere est plus grand que {user_choice}")
     else :
-        print(f"""Bravo! Le nombre mystère était bien {number_to_find}!
-Tu as trouvé le nombre en {remaining_attempts} essai{'s' if remaining_attempts > 1 else ''}
-""" )
-    
+        break
+        
+    #décrémente la variable   
     remaining_attempts -= 1
     
      
@@ -42,7 +39,9 @@ if remaining_attempts == 0 :
            """)
     
 else :
-    print("Veuillez entrer un nombre valide : ")
+    print(f"""Bravo! Le nombre mystère était bien {number_to_find}!
+Tu as trouvé le nombre en {11-remaining_attempts} essai{'s' if remaining_attempts > 1 else ''}
+""" )
 
 print("Fin du jeu.")
     
