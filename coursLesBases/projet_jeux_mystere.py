@@ -1,48 +1,39 @@
-from pickletools import int4
 import random
 # trouver un nombre aléatoire entre 0 et 100
+
+number_to_find = random.randint(0,100)
+remaining_attempts = 5
+user_choice = ""
 
 # titre 
 print("*** Le jeu du nombre mystère***")
 
-nombre_essai = int
-# il te reste 5 essais
-#Il te reste {nombre_essai}.
-# devine le nombre
-# Veuillez entrer un nombre valide 
-
 # le nombre mystere est plus petit que {user_choice}
 # le nombre mystere est plus grand que {user_choice}
-#Dommage! Le nombre mystère était {nombre_mystere}
-#Fin du jeu. 
 
-# Bravo! Le nombre mystère était bien {nombre_mystere}!
-# Tu as trouvé le nombre en {nombre essai}
-# Fin du jeu. 
 
-# def variable nombre_mystere
-Liste = [ _ for _ in range (1, 101)]
-# print(Liste)
+print(number_to_find)
 
-def selectRandom(Liste):
-    return random.choice(Liste)
+while remaining_attempts > 0 :
+    if user_choice != number_to_find :
+        user_choice = input("""
+        Devine le nombre
+        """)
+        print(f"il te reste {remaining_attempts} essai")
+    
 
-print(selectRandom(Liste))
-while True:
-    user_choice = ""
-    while user_choice != selectRandom(Liste):
-        user_choice = input("Veuillez entrer un nombre valide : ")
-        # for i in nombre_essai :
-        #     if i <= 5 :
-        #         i+=1
-        #     # nombre_essai(i+=1)
-        #     print(f"il te reste {nombre_essai} essai")
-        # if nombre_essai > 5 :
-        #     break
+    if user_choice == number_to_find :
+        print(f"""Bravo! Le nombre mystère était bien {number_to_find}!
+Tu as trouvé le nombre en {remaining_attempts}
+""" )
         
-    if user_choice == selectRandom(Liste) :
-        print("""
-          # Bravo! Le nombre mystère était bien {nombre_mystere}!
-# Tu as trouvé le nombre en {nombre essai}
-# Fin du jeu.""" )
+if remaining_attempts == 0 :
+    print (f"""
+           Dommage! Le nombre mystère était {number_to_find}
+           """)
+    
+else :
+    print("Veuillez entrer un nombre valide : ")
+
+print("Fin du jeu.")
     
