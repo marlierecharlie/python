@@ -15,12 +15,17 @@ print("*** Le jeu du nombre mystère***")
 print(number_to_find)
 
 while remaining_attempts > 0 :
-    remaining_attempts = i+1
-    if user_choice != number_to_find :
-        user_choice = input("""
-        Devine le nombre
-        """)
-        print(f"il te reste {remaining_attempts} essai")
+    #oppérateur ternaire pour ajouter s à essai si pluriel
+    print(f"il te reste {remaining_attempts} essai{'s' if remaining_attempts > 1 else ''}")
+
+    user_choice = input("Devine le nombre")
+    if not user_choice.isdigit():
+        print("Veuillez entrer un nombre valide")
+        #continue permet de revenir au début de la boucle while
+        continue
+    
+    #permet d'écraser str user choice par un nombre entier
+    user_choice = int(user_choice)
     
 
     if user_choice == number_to_find :
