@@ -20,11 +20,8 @@ while my_lifescore > 0:
     if ennemy_lifescore > 0 :
         entre
         
-        # if not user_choice.isdigit():
-        #     entre
-
-        # permet d'écraser str user choice par un nombre entier    
-        # user_choice = int(user_choice)
+        if user_choice != "1" or "2" :
+            entre
         
         if user_choice == "1" :
             my_lifescore = my_lifescore - points_de_degats
@@ -32,7 +29,7 @@ while my_lifescore > 0:
             print(f"Il vous reste {my_lifescore} points de vie.")
             ennemy_lifescore = ennemy_lifescore - points_de_degats_enemy
             print(f"Il reste {ennemy_lifescore} points de vie à l'ennemi.")
-        # if user_choice == "2" :
+        if user_choice == "2" :
             if nombre_de_potions >= 3 :
                 nombre_de_potions -= 1
                 my_lifescore = my_lifescore + points_de_potion
