@@ -1,5 +1,4 @@
 import random
-from unicodedata import digit
 
 points_de_degats = random.randint(5,15)
 points_de_degats_enemy = random.randint(5,10)
@@ -15,12 +14,14 @@ user_choice = ""
 # l'ennemi m'inflige entre 5 et 15 pts de visiblename
 # je passe le prochain tour en utilisant une potion
 
-while my_lifescore >= 50:
-        input("Souhaitez-vous attaquer (1) ou utiliser une potion (2)")
+if my_lifescore >= 50:
+    
+    if ennemy_lifescore > 0 :
+        input("Souhaitez-vous attaquer (1) ou utiliser une potion (2) : ")
         
         if not user_choice.isdigit():
-            input("Souhaitez-vous attaquer (1) ou utiliser une potion (2)")
-        
+            input("Souhaitez-vous attaquer (1) ou utiliser une potion (2) : ")
+
         # permet d'écraser str user choice par un nombre entier    
         user_choice = int(user_choice)
         
@@ -30,13 +31,29 @@ while my_lifescore >= 50:
             print(f"Il reste {ennemy_lifescore - points_de_degats_enemy} points de vie à l'ennemi.")
 
         if user_choice == 2 :
-            nombre_de_potions -= 1
-            print("Vous réccupérez {my_lifescore} points de vie.")
-            print(f"Il vous reste {nombre_de_potions}.")
+            if nombre_de_potions >= 3 :
+                nombre_de_potions -= 1
+                my_lifescore = my_lifescore + points_de_potion
+                print(f"Vous réccupérez {my_lifescore} points de vie.")
+                print(f"Il vous reste {nombre_de_potions}.")
+                print("Vous passez votre tour!")
+                my_lifescore = my_lifescore - points_de_degats
+                print(f"l'ennemi vous a infligé {points_de_degats} points de dégats.")
+                print(f"Il vous reste {my_lifescore} points de vie.")
+                print(f"Il reste {ennemy_lifescore} points de vie à l'ennemi.")
+            
+            else :
+                print("Vous n'avez plus de potions.")
+                print(user_choice)
 
-print("Vous passez votre tour!")
+    else :
+        print("Tu as gagné!")
 
-print("Vous n'avez plus de potions.")
-
-print("Tu as gagné!")
+else :
+    print(f"Il te reste {my_lifescore} points de vie.")
+    print(f"Il reste {ennemy_lifescore} points de vie à l'ennemi.")
+    print("Tu as perdu.")
+    
+    
+    
 print("Fin du jeu.")
