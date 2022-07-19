@@ -6,7 +6,7 @@ my_lifescore = 50
 ennemy_lifescore = 50
 nombre_de_potions = 3
 points_de_potion = random.randint(15,50)
-user_choice = ""
+user_choice = "1" or "2"
 entre = input("Souhaitez-vous attaquer (1) ou utiliser une potion (2) : ")
 
 # chaque potion permet de réccupérer aléatoirement entre 15
@@ -20,7 +20,7 @@ while my_lifescore > 0:
     if ennemy_lifescore > 0 :
         entre
         
-        if user_choice != "1" or "2" :
+        if user_choice is False :
             entre
         
         if user_choice == "1" :
@@ -29,6 +29,8 @@ while my_lifescore > 0:
             print(f"Il vous reste {my_lifescore} points de vie.")
             ennemy_lifescore = ennemy_lifescore - points_de_degats_enemy
             print(f"Il reste {ennemy_lifescore} points de vie à l'ennemi.")
+            entre
+            
         if user_choice == "2" :
             if nombre_de_potions >= 3 :
                 nombre_de_potions -= 1
