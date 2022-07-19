@@ -14,8 +14,8 @@ while my_lifescore > 0:
     
     while ennemy_lifescore > 0 :
         
-        # while user_choice not in ["1","2"]:
-        #     user_choice = input("Souhaitez-vous attaquer (1) ou utiliser une potion (2) : ")
+        while user_choice not in ["1","2"]:
+             user_choice = input("Souhaitez-vous attaquer (1) ou utiliser une potion (2) : ")
        
         if user_choice == "1" :
             my_lifescore = my_lifescore - points_de_degats
@@ -28,11 +28,11 @@ while my_lifescore > 0:
         elif user_choice == "2" :
             if nombre_de_potions >= 3 :
                 nombre_de_potions -= 1
-                my_lifescore = my_lifescore + points_de_potion
+                my_lifescore += points_de_potion
                 print(f"Vous réccupérez {my_lifescore} points de vie.")
                 print(f"Il vous reste {nombre_de_potions} potions.")
                 print("Vous passez votre tour!")
-                my_lifescore = my_lifescore - points_de_degats
+                my_lifescore -= points_de_degats
                 print(f"l'ennemi vous a infligé {points_de_degats} points de dégats.")
                 print(f"Il vous reste {my_lifescore} points de vie.")
                 print(f"Il reste {ennemy_lifescore} points de vie à l'ennemi.")
