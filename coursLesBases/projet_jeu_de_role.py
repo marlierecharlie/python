@@ -1,55 +1,51 @@
 import random
 
-points_de_degats = random.randint(5,15)
-points_de_degats_enemy = random.randint(5,10)
 my_lifescore = 50
 ennemy_lifescore = 50
 nombre_de_potions = 3
-points_de_potion = random.randint(15,50)
-# user_choice est une liste de caractères
-user_choice = ""
+SKIP_TRUN = False
 
 
 while my_lifescore > 0:
     
-    while ennemy_lifescore > 0 :
+    if SKIP_TRUN:
+        print("Vous passez votre tour")
+        SKIP_TRUN = False
         
+    else :
+        user_choice = ""
         while user_choice not in ["1","2"]:
-             user_choice = input("Souhaitez-vous attaquer (1) ou utiliser une potion (2) : ")
+            user_choice = input("Souhaitez-vous attaquer (1) ou utiliser une potion (2) : ")
        
         if user_choice == "1" :
-            my_lifescore = my_lifescore - points_de_degats
-            print(f"l'ennemi vous a infligé {points_de_degats} points de dégats.")
-            print(f"Il vous reste {my_lifescore} points de vie.")
-            ennemy_lifescore = ennemy_lifescore - points_de_degats_enemy
-            print(f"Il reste {ennemy_lifescore} points de vie à l'ennemi.")
-            
-            
+            your_attack = random.randint(5, 10)
+            ennemy_lifescore -= your_attack
+            print(f"Vous avez infligé {your_attack} points de dégats à l'ennemi.")   
             
         elif user_choice == "2" :
-            if nombre_de_potions >= 3 :
+            if nombre_de_potions > 0 :
+                potion_health = random.randint(15, 50)
+                my_lifescore += potion_health
                 nombre_de_potions -= 1
-                my_lifescore += points_de_potion
-                print(f"Vous réccupérez {my_lifescore} points de vie.")
-                print(f"Il vous reste {nombre_de_potions} potions.")
-                print("Vous passez votre tour!")
-                my_lifescore -= points_de_degats
-                print(f"l'ennemi vous a infligé {points_de_degats} points de dégats.")
-                print(f"Il vous reste {my_lifescore} points de vie.")
-                print(f"Il reste {ennemy_lifescore} points de vie à l'ennemi.")
-            
+                SKIP_TURN = True
             else :
                 print("Vous n'avez plus de potions.")
                 continue
 
-    else :
+    if ennemy_lifescore <= 0 :
         print("Tu as gagné!")
-
-else :
-    print(f"Il te reste {my_lifescore} points de vie.")
+        break
+    
+    enemy_attack = random.randint(5, 15)
+    my_lifescore -= enemy_attack
+    print(f"L'ennemi vous a infligé {enemy_attack} points de dégats.")
+    
+    if my_lifescore <= 0 :
+        print("tu as perdu")
+        break 
+    
+    print(f"Il vous reste {my_lifescore} points de vie.")
     print(f"Il reste {ennemy_lifescore} points de vie à l'ennemi.")
-    print("Tu as perdu.")
-    
-    
+    print("-" * 50)
     
 print("Fin du jeu.")
