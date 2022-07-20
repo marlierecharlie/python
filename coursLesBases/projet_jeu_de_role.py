@@ -25,6 +25,7 @@ while my_lifescore > 0:
             print(f"Il reste {ennemy_lifescore} points de vie à l'ennemi.")
             
             
+            
         elif user_choice == "2" :
             if nombre_de_potions >= 3 :
                 nombre_de_potions -= 1
@@ -39,7 +40,7 @@ while my_lifescore > 0:
             
             else :
                 print("Vous n'avez plus de potions.")
-                input("Souhaitez-vous attaquer (1) ou utiliser une potion (2) : ")
+                continue
 
     else :
         print("Tu as gagné!")
