@@ -16,6 +16,7 @@ while my_lifescore > 0:
         user_choice = ""
         while user_choice not in ["1","2"]:
             user_choice = input("Souhaitez-vous attaquer (1) ou utiliser une potion (2) : ")
+            potion_health = random.randint(15, 50)
        
         if user_choice == "1" :
             your_attack = random.randint(5, 10)
@@ -24,9 +25,9 @@ while my_lifescore > 0:
             
         elif user_choice == "2" :
             if nombre_de_potions > 0 :
-                potion_health = random.randint(15, 50)
                 my_lifescore += potion_health
                 nombre_de_potions -= 1
+                print(f"La potions t'as fait gagner {potion_health} points de vie")
                 print(f"Il te reste maintenant {nombre_de_potions} potions.")
                 SKIP_TURN = True
             else :
