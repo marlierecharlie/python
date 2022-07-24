@@ -3,14 +3,14 @@ import random
 my_lifescore = 50
 ennemy_lifescore = 50
 nombre_de_potions = 3
-SKIP_TRUN = False
+SKIP_TURN = False
 
 
 while my_lifescore > 0:
     
-    if SKIP_TRUN:
+    if SKIP_TURN:
         print("Vous passez votre tour")
-        SKIP_TRUN = False
+        SKIP_TURN = False
         
     else :
         user_choice = ""
@@ -27,12 +27,15 @@ while my_lifescore > 0:
                 potion_health = random.randint(15, 50)
                 my_lifescore += potion_health
                 nombre_de_potions -= 1
+                print(f"Il te reste maintenant {nombre_de_potions} potions.")
                 SKIP_TURN = True
             else :
                 print("Vous n'avez plus de potions.")
                 continue
 
     if ennemy_lifescore <= 0 :
+        print(f"Il vous reste {my_lifescore} points de vie.")
+        print("Il reste 0 points de vie à l'ennemi.")
         print("Tu as gagné!")
         break
     
@@ -41,6 +44,8 @@ while my_lifescore > 0:
     print(f"L'ennemi vous a infligé {enemy_attack} points de dégats.")
     
     if my_lifescore <= 0 :
+        print("Il vous reste 0 points de vie.")
+        print(f"Il reste {ennemy_lifescore} points de vie à l'ennemi.")
         print("tu as perdu")
         break 
     
