@@ -48,11 +48,14 @@ def foo(param):
     # sert à copier la référence de l'objet 
     test.append(4)
     print(test)
+    print(id(test))
     
     
 var = [1,2,3]
 foo(param=var)
 print(var)
- 
+print(id(var))
+# plusieurs noms peuvent pointer vers le même
+# objet
 
 # pour revoir le chapitre : https://youtu.be/uFWYSSsJ_JE
