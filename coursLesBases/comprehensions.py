@@ -5,7 +5,6 @@
 #     else :
 #         continue
 
-jh
 # autre méthode
 liste = [-1, -3, 2, 4, 10, 7]
 nombres=[]
